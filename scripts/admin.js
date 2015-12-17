@@ -1,7 +1,7 @@
 $(document).ready(function() {
 	
 	$("div.mobile").click(function() {
-			$(".sidebar").slideToggle();
+			$(".sidebar").slideToggle('fast');
 	});
 
 	window.onresize = function(event) {
@@ -17,8 +17,7 @@ $(document).ready(function() {
 	// 	return false;
 	// });
 
-	$('#btnInfo').click(function(event){
+	$('button.btnInfo').click(function(event){
     	$('p.info-p').slideToggle('fast');
-    	// $('tr.hover-tr').css("background-color","#2c3e50");
 	});
 });
