@@ -1,15 +1,21 @@
-<html>
+<!doctype html>
+<html lang="en" ng-app="adminPanelApp">
 <head>
+	<meta charset="utf-8">
 	<title>Admin Panel</title>
 	<link rel="stylesheet" type="text/css" href="styles/admin.css">
 	<meta name="viewport" content="width=device-width, initial-scale: 1.0, user-scalabe=0">
 	<script type="text/javascript" src="scripts/jquery-1.11.3.min.js"></script>
+	<script src="bower_components/angular/angular.js"></script>
+	<!-- <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script> -->
+
 	<script type="text/javascript" src="scripts/admin.js"></script>
+	<script src="scripts/admin-controllers.js"></script>
 </head>
-<body>
+<body  ng-controller="PhoneListCtrl">
 
 	<div id="header">
-		<div class="mobile"><a href="#"><img src="images/menu.gif"></a></div>
+		<div class="mobile"><a href="#"><img src="images/mm.gif"></a></div>
 		<div class="logo"><a href="#">interview<span>.code</span></a></div>
 		<div class="search"><input type="text" placeholder="Search for something"></div>
 		<div class="send-request">
@@ -22,97 +28,36 @@
 		<div class="sidebar">
 			<ul id="nav">
 				<li><a id="selected" href="#">Dashboard</a></li>
-				<li><a href="clients.html">Clients</a></li>
-				<li><a href="#">Search</a></li>
+				<li><a href="#">Participants</a></li>
 				<li><a href="#">Statistics</a></li>
 			</ul>
 		</div>
 		<div class="content">
 		<!-- 	<h1>Dashboard</h1> -->
 			<div class="top">
-				<div class="box-tool">153<p>Output request in current month</p></div>
-				<div class="box-tool">12,456<p>Passed test</p></div>
-				<div class="box-tool">1,512<p>Clients</p></div>
+				<div class="box box-small"><span>Requests</span><hr/><p>152</p></div>
+				<div class="box box-small"><span>View</span><hr/><p>12,456</p></div>
+				<div class="box box-small"><span>Passed tests</span><hr/><p>1,512</p></div>
 				<br class="clearBoth">
 			</div>
 
 			<div class="box">
-				<div class="clients-search">
-					<form method="POST">
-						<input type="text" placeholder="Id">
-						<input type="text" placeholder="Name">
-						<input type="text" placeholder="Surname">
-					</form>
+				<div>
+					<input type="text" placeholder="Name" ng-model="name">
+					<button>Search</button>
 				</div>
-				<button class="btnInfo">Details</button>
-				<table>
-					<thead>
-						<tr>
-							<th>id</th>
-							<th>Name</th>
-							<th>Surname</th>
-							<th>Email</th>
-							<th>Admin</th>		
-						</tr>				
-					</thead>
+				<table id="table-dashboard">
 					<tbody>
-
-						<tr class="hover-tr" onclick="">
-							<td>1</td>
-							<td>Dmytro</td>
-							<td>Kutsaniuk</td>
-							<td>kutsaniuk@gmail.com</td>
-							<td><input type="checkbox" checked></td>
-
-						</tr>
-						<tr class="info">
-							<td class="info-td" colspan='5'>
-								<p  class="info-p">
-								Test sent: <br>
-								Test return: <br>
-								Completion: <br>
-								</p>
-							</td>
-						</tr>
-						<tr class="hover-tr">
-							<td>2</td>
-							<td>Yura</td>
-							<td>Demkiv</td>
-							<td>demkiv@gmail.com</td>
-							<td><input type="checkbox"></td>
-						</tr>
-						<tr class="info">
-							<td class="info-td" colspan='5'>
-								<p  class="info-p">
-								Test sent: <br>
-								Test return: <br>
-								Completion: <br>
-								</p>
-							</td>
-						</tr>
-						<tr class="hover-tr">
-							<td>3</td>
-							<td>Ivan</td>
-							<td>Arabchuk</td>
-							<td>arabchuk@gmail.com</td>
-							<td><input type="checkbox"></td>
-						</tr>
-						<tr class="info">
-							<td class="info-td" colspan='5'>
-								<p  class="info-p">
-								Test sent: <br>
-								Test return: <br>
-								Completion: <br>
-								</p>
-							</td>
+						<tr class="hover-tr" ng-repeat="client in clients | filter:name">
+							<td><a href="#">{{client.name}} {{client.surname}}</a></td>
+							<td> {{client.email}} </td>
+							<td> 17.04.15</td>
+							<td><div class="status-{{client.statusClass}}">{{client.status}}</div></td>
 						</tr>
 					</tbody>
 				</table>
-
-				
-
 			</div>
-			
+			<br><br><br>
 		</div>
 	</div>
 

@@ -24,8 +24,9 @@ div#header {
 
 .logo {
 	float: left;
-	padding: 11px;
-	margin-left: 11px;
+	padding-top: 12px;
+	padding-left: 10px;
+	/*margin-left: 11px;*/
 }
 
 .logo a {
@@ -35,24 +36,18 @@ div#header {
 .logo a span {
 	font-weight: 300;
 }
-div.send-request{
-	display: block;
-	background: #2980b9;
-	float: right;
-	padding: 0px;
-	height: 50;
-	width: 100px;
-}
 div#conteiner {
 	width: 100%;
 	margin: 0 auto;
+	background: #34495e;
 }
 
 .sidebar {
+	/*position: static;*/
 	margin: 0;
 	width: 150px;
 	/*height: calc(100% - 50%);*/
-	/*height: 100%;*/
+	height: 100%;
 	/*background: #ecf0f1;*/
 	background: #34495e;
 	float: left;
@@ -91,8 +86,8 @@ ul#nav li a:focus, ul li a#selected {
 .content {
 	width: auto; 
 	/*height: calc(100% - 50%);*/
-	height: 100%;
-	background: #fff;
+	height: auto;
+	background: #eee;
 	margin-left: 150px;
 	padding: 0px;
 	color: #424242;
@@ -105,17 +100,37 @@ div.mobile {
 	width: 50px;
 	height: 50px;
 	color: #fff;
-	padding: 17px;
+	padding: 0px;
 	text-align: center;
+	-webkit-transition: 0.2s;
+	-moz-transition: 0.2s;
+	-o-transition: 0.2s;
+	transition: 0.2s;
 }	
-div.mobile:active{
+div.mobile:hover{
 	background: #2980b9;
 }
 /*	RESIZE	*/
 @media only screen and (max-width: 700px){
+	div.box-small{
+		width: 100%;
+		margin: 0;
+		margin-bottom: 15px;
+	}
+	.logo{
+		margin-left: 50px;
+		position: absolute;
+	}
+	.box{
+		width: 93%;
+		margin: 25px;
+	}
 	.sidebar{
+		position: absolute;
+		height: auto;
 		width: 100%;
 		display: none;
+		text-align: center;
 	}
 
 	.content {
@@ -127,6 +142,17 @@ div.mobile:active{
 	}
 }
 @media only screen and (min-width: 700px){
+	div.box-small{
+			margin: 0;
+			width: 150px;
+	}
+	.logo{
+		position: fixed;
+	}
+	.box{
+		margin-left: 25px;
+		width: 700px;
+	}
 	div.mobile{
 		display: none;
 	}
@@ -136,9 +162,11 @@ div.mobile:active{
 
 	}
 	div.top{
-		max-height: 150px;
+
+		/*max-height: 150px;*/
 	}
 	.sidebar{
+		position: fixed;
 		height: 100%;
 		display: block;
 	}
@@ -147,8 +175,10 @@ div.mobile:active{
 /*	SEARCH	*/
 
 div.search{
+	margin-left: 180px;
+	margin-bottom: 15px;
+	display: none;
 	padding: 15px;
-	float: left;
 }
 input[type="text"]{
 	color: #fff;
@@ -157,32 +187,67 @@ input[type="text"]{
 	font-size: 15px;
 }
 
-/*	PLACEHOLDER */
-::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-    color: #78C3F5;
-}
-:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-   color: #78C3F5;
-   opacity:  1;
-}
-::-moz-placeholder { /* Mozilla Firefox 19+ */
-   color: #78C3F5;
-   opacity:  1;
-}
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
-   color: #78C3F5;
-}
-
-
 /*	BOX   */
 div#box-main {
 	height: 200px;
 }
 div.box {
+	/*border: 3px solid #fff; */
+	margin-top: 0;
+	margin-bottom: 15px;
+	border-top: 3px solid #e4e4e4; 
+	box-shadow: 0 1px 0 #e1e1e1; 
 	display: block;
-	margin-top: 15px;
-/*	background: #eee;*/
-	height: auto;
+	padding: 20px;
+	background: #fff;
+	height: 500px;
+	-webkit-transition: 0.2s;
+	-moz-transition: 0.2s;
+	-o-transition: 0.2s;
+	transition: 0.2s;
+}
+div.box-small{
+	padding: 0;
+	height: 125px;
+	float: left; 
+}
+hr {
+    border: 0;
+    width: 100%;
+    color: #e1e1e1;
+    background-color: #e1e1e1;
+    height: 1px;
+ }
+div.box-small span{
+	margin: 10px;
+	display: block;
+	font-size: 14px;
+	font-weight: 600;
+	color: #666;
+}
+div.box-small p{
+	padding: 20px; 
+	font-size: 30px;
+	color: #666;
+	font-weight: 300;
+}
+div.box:hover { border-top: 3px solid #d9d9d9; }
+div.box div{
+	width: 100%;
+	display: block-inline;
+	padding: 15px;
+}
+div.box div button{
+	position: absolute;
+	padding-left: 10px;
+	padding-right: 10px;
+	border-radius: 0 3px 3px 0;
+	margin: 0;
+	margin-left: -1px;
+	height: 34px;
+}
+div.box div input{
+	width: 89%;
 }
 div.box .box-top {
 	color: #fff;
@@ -197,9 +262,11 @@ div.box .box-panel {
 }
 div.box-tool {
 	width: 150px;
-	height: 150px;
+	height: auto;
 	padding: 20px;
+	margin-left: 5px;
 	font-size: 25px;
+	background: #888;
 /*	margin: 25px;*/
 	float: left; 
 }
@@ -210,15 +277,22 @@ div.box-tool p{
 
 .clients-search {
 	padding: 25px;
+	display: none;
 }
-div.clients-search form input[type="text"]{
-	margin-right: 15px;
-	margin-bottom: 10px;
+div.filter-box{
+	/*position: relative;*/
+	width: 100%;
+	display: block;
+	float: left;
+}
+
+
+input[type="text"]{
 	border: 1px solid #e1e1e1;
-	border-radius: 3px;
+	border-radius: 1px 0 0 1px;
 	padding: 8px;
 	padding-left: 12px; 
-	font-size: 15px;
+	font-size: 14px;
 	background: #fff;
 	color: #333;
 	-webkit-transition: 0.2s;
@@ -226,42 +300,40 @@ div.clients-search form input[type="text"]{
 	-o-transition: 0.2s;
 	transition: 0.2s;
 }
-div.clients-search form input[type="text"]:focus{
-	border: 1px solid #3498db;
+input[type="text"]:focus{
+	border: 1px solid #1abc9c;
 }
-table{
+table#table-dashboard{
 	width: 100%;
-	padding: 15px;
 	border-top: 1px solid #e1e1e1;
 	border-bottom: 1px solid #e1e1e1;
 	border-spacing: 0;
+	font-size: 13px;
 }
-table thead tr th{
-	text-align: left;
-	padding: 5px;
+table#table-dashboard tbody tr td{
+	padding: 13px;
+	color: #555;
+	/*background: #eee;*/
+	/*padding-left: 10px;*/
 }
-table tbody tr td{
-	padding: 5px;
-	padding-left: 10px;
+table#table-dashboard tbody tr td a{
+	color: #555;
+	font-weight: bold;
 }
 .hover-tr:hover{
-	background: #2c3e50;
-	color: #fff;
+	background: #eee;
 	margin-left: 15px;
 	-webkit-transition: 0.2s;
 	-moz-transition: 0.2s;
 	-o-transition: 0.2s;
 	transition: 0.2s;
-	cursor: pointer;
 }
 div.top{
 	display: block;
 	width: 100%;
 	height: auto;
-	background: #ecf0f1; 
 	margin: 0px;
-	padding-top: 25px;
-	padding-left: 25px;
+	padding: 25px;
 }
 tr.info td{ padding: 0;}
 tr.info{
@@ -269,14 +341,15 @@ tr.info{
 	height: auto;
 }
 p.info-p{
+	position: relative;
 	display: none;
 	padding: 10px;
 	padding-left: 15px;
-	border-left: 3px solid #2c3e50;
-	border-bottom: 3px solid #2c3e50;
-	border-right: 3px solid #2c3e50;
+	border-left: 1px solid silver;
+	border-bottom: 1px solid silver;
+	border-right: 1px solid silver;
 }
-button.btnInfo{
+button{
 	
 	background: #1abc9c;
 	border-radius: 3px; 
@@ -292,9 +365,23 @@ button.btnInfo{
 	-o-transition: 0.2s;
 	transition: 0.2s;
 }
-button.btnInfo:hover{
+button:hover{
 	background: #16a085;
 }
-button.btnInfo:active{
+button:active{
 	background: #138a72;
 }
+
+.status-done,.status-in-progress{
+	display: inherit;
+	color: #eee;
+	background: #1abc9c;
+	border-radius: 3px;
+}
+.status-in-progress{
+	background: #f8ac59;
+}
+div#box-list{position:static;float: left;width: 100%;padding: 10px;margin: 0;}
+ul#list-tb li {display: inline-block;font-size: 14px; padding: 10px;}
+ul#list-tb div:hover { background: #ecf0f1; }
+ul#list-tb div{border-bottom: 1px solid #eee;};
