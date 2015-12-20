@@ -62,7 +62,7 @@ div#container {
 	float: left;
 }
 a#dachboard, a#participants, a#statistics {
-	background-image:url(D:/Mockup-interview/images/db.png);
+	background-image:url(/images/db.png);
     background-position:10px 10px;
     background-repeat:no-repeat;
     display:block;
@@ -70,14 +70,14 @@ a#dachboard, a#participants, a#statistics {
     /*overflow:hidden;*/
     text-indent:20%;
 }
-a#dachboard:hover{background-image:url(D:/Mockup-interview/images/db-h.png);}
-a#dachboard:focus{background-image:url(D:/Mockup-interview/images/db-h.png);}
-a#participants{background-image:url(D:/Mockup-interview/images/pib.png);}
-a#participants:hover{background-image:url(D:/Mockup-interview/images/pib-h.png);}
-a#participants:focus{background-image:url(D:/Mockup-interview/images/pib-h.png);}
-a#statistics{background-image:url(D:/Mockup-interview/images/s.png);}
-a#statistics:hover{background-image:url(D:/Mockup-interview/images/s-h.png);}
-a#statistics:focus{background-image:url(D:/Mockup-interview/images/s-h.png);}
+a#dachboard:hover{background-image:url(/images/db-h.png);}
+a#dachboard:focus{background-image:url(/images/db-h.png);}
+a#participants{background-image:url(/images/pib.png);}
+a#participants:hover{background-image:url(/images/pib-h.png);}
+a#participants:focus{background-image:url(/images/pib-h.png);}
+a#statistics{background-image:url(/images/s.png);}
+a#statistics:hover{background-image:url(/images/s-h.png);}
+a#statistics:focus{background-image:url(/images/s-h.png);}
 
 ul#nav li {
 	margin-left: 10px;
